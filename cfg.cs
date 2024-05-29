@@ -4,6 +4,10 @@ using CounterStrikeSharp.API.Core;
 namespace cs2_hours_spent;
 
 public class Cfg : BasePluginConfig {
+    [JsonPropertyName("CommandNames")] public string[] Cmds {get; set;} = ["playtime"];
+    [JsonPropertyName("CommandDesc")] public string CmdDesc {get; set;} = "Gets info about player spent time on server";
+    [JsonPropertyName("DefaultLimit")] public int Limit {get; set;} = 5;
+    [JsonPropertyName("SpentMsg")] public string SpentMsg {get; set;} = " has spent on the server!";
     [JsonPropertyName("Database")] public DB DbC {get; set;} = new DB{};
 }
 
